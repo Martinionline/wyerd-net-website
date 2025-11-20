@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - wyerd.net</title>
+    <meta name="build-timestamp" content="1763596857791">
+    <meta name="build-version" content="1">
+    <!-- Production-ready Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=1763596857791">
+    <!-- Google Maps API with proper async loading -->
+    <script>
+      function initGoogleMaps() {
+        // Google Maps initialization will be handled in map components
+        window.googleMapsLoaded = true;
+        if (window.initMapComponents) {
+          window.initMapComponents();
+        }
+      }
+      
+      // Handle Google Maps API errors
+      function gm_authFailure() {
+        console.error('Google Maps API authentication failed. Please check:');
+        console.error('1. API key is valid and has billing enabled');
+        console.error('2. Maps JavaScript API is enabled');
+        console.error('3. Domain restrictions are properly configured');
+        console.error('Current domain:', window.location.origin);
+        
+        // Fallback to OpenStreetMap
+        if (window.initMapComponents) {
+          window.initMapComponents(true); // Pass true to force OpenStreetMap fallback
+        }
+      }
+      
+      // Add current domain to console for debugging
+      console.log('Initializing Google Maps for domain:', window.location.origin);
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVNsc6d_UBybzhvFgyGwjW9hu62kXdjS0&libraries=places&callback=initGoogleMaps&loading=async" onerror="gm_authFailure()"></script>
+    <!-- Leaflet (OpenStreetMap) from reliable CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="main-navigation">
+      <div class="navigation-container h-full flex flex-col justify-center transition-opacity duration-200" 
+           style="background-color: transparent; border: 1px solid #e5e7eb; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; font-family: "Courier New"; padding: 8px 16px; font-size: 14px; font-weight: 500; color: #374151; height: 104.47265625px; min-height: 104.47265625px">
+        
+            <div class="flex items-center w-full h-full justify-between">
+              
+      <div class="flex items-center mr-4">
+        
+          <div class="font-bold cursor-pointer transition-colors duration-200" 
+               style="
+                 color: #1f2937;
+                 font-family: inherit;
+                 font-size: 40px;
+                 font-weight: bold;
+                 
+               "
+               onmouseover="this.style.color='#1d4ed8'"
+               onmouseout="this.style.color='#1f2937'"
+          >
+            My Website
+          </div>
+        
+      </div>
+    
+              <div class="flex items-center  flex  flex-1 justify-center" style="gap: 16px;">
+                
+        <button class="transition-all duration-200 flex items-center gap-2 hover:shadow-sm" 
+                onclick="window.location.href='index.html'"
+                style="
+                  padding: 8px 12px;
+                  font-size: 14px;
+                  font-weight: 500;
+                  border-radius: 6px;
+                  background-color: transparent; color: #374151;
+                  border: none;
+                  cursor: pointer;
+                  transition: all 0.2s ease;
+                "
+                onmouseover="if (!false) { this.style.backgroundColor='#f3f4f6'; this.style.boxShadow='0 1px 2px rgba(0,0,0,0.05)'; }"
+                onmouseout="if (!false) { this.style.backgroundColor='transparent'; this.style.boxShadow='none'; }"
+        >
+          <span>Home</span>
+        </button>
+        <button class="transition-all duration-200 flex items-center gap-2 hover:shadow-sm" 
+                onclick="window.location.href='about.html'"
+                style="
+                  padding: 8px 12px;
+                  font-size: 14px;
+                  font-weight: 500;
+                  border-radius: 6px;
+                  background-color: transparent; color: #374151;
+                  border: none;
+                  cursor: pointer;
+                  transition: all 0.2s ease;
+                "
+                onmouseover="if (!false) { this.style.backgroundColor='#f3f4f6'; this.style.boxShadow='0 1px 2px rgba(0,0,0,0.05)'; }"
+                onmouseout="if (!false) { this.style.backgroundColor='transparent'; this.style.boxShadow='none'; }"
+        >
+          <span>About</span>
+        </button>
+        <button class="transition-all duration-200 flex items-center gap-2 hover:shadow-sm" 
+                onclick="window.location.href='services.html'"
+                style="
+                  padding: 8px 12px;
+                  font-size: 14px;
+                  font-weight: 500;
+                  border-radius: 6px;
+                  background-color: transparent; color: #374151;
+                  border: none;
+                  cursor: pointer;
+                  transition: all 0.2s ease;
+                "
+                onmouseover="if (!false) { this.style.backgroundColor='#f3f4f6'; this.style.boxShadow='0 1px 2px rgba(0,0,0,0.05)'; }"
+                onmouseout="if (!false) { this.style.backgroundColor='transparent'; this.style.boxShadow='none'; }"
+        >
+          <span>Services</span>
+        </button>
+        <button class="transition-all duration-200 flex items-center gap-2 shadow-md" 
+                onclick="window.location.href='contact.html'"
+                style="
+                  padding: 8px 12px;
+                  font-size: 14px;
+                  font-weight: 500;
+                  border-radius: 6px;
+                  background-color: #3b82f6; color: white; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+                  border: none;
+                  cursor: pointer;
+                  transition: all 0.2s ease;
+                "
+                onmouseover="if (!true) { this.style.backgroundColor='#f3f4f6'; this.style.boxShadow='0 1px 2px rgba(0,0,0,0.05)'; }"
+                onmouseout="if (!true) { this.style.backgroundColor='transparent'; this.style.boxShadow='none'; }"
+        >
+          <span>Contact</span>
+        </button>
+              </div>
+            </div>
+          
+      </div>
+    </nav>
+    <main>
+        <div class="empty-page"><h1>Welcome</h1><p>This page is being customized.</p></div>
+    </main>
+    <script>
+        // Cache busting and auto-refresh mechanism
+        const CURRENT_BUILD_TIMESTAMP = 1763596857791;
+        const CURRENT_BUILD_VERSION = 1;
+        
+        // Check for updates every 30 seconds when page is visible
+        let updateCheckInterval;
+        
+        function checkForUpdates() {
+            // Only check for updates if the page is visible to avoid unnecessary requests
+            if (document.visibilityState === "visible") {
+                fetch(window.location.href, { 
+                    method: "HEAD",
+                    cache: "no-cache"
+                })
+                .then(response => {
+                    // Get build timestamp from response headers or try a different approach
+                    return fetch("/?checkVersion=" + Date.now(), { cache: "no-cache" });
+                })
+                .then(response => response.text())
+                .then(html => {
+                    // Extract build timestamp from the fetched HTML
+                    const timestampMatch = html.match(/name="build-timestamp" content="(d+)"/);
+                    const versionMatch = html.match(/name="build-version" content="(d+)"/);
+                    
+                    if (timestampMatch) {
+                        const serverTimestamp = parseInt(timestampMatch[1]);
+                        const serverVersion = versionMatch ? parseInt(versionMatch[1]) : 1;
+                        
+                        // If server has newer content, reload the page
+                        if (serverTimestamp > CURRENT_BUILD_TIMESTAMP || serverVersion > CURRENT_BUILD_VERSION) {
+                            console.log("🔄 New website version detected, refreshing page...");
+                            window.location.reload(true);
+                        }
+                    }
+                })
+                .catch(error => {
+                    // Silently handle errors to avoid console spam
+                    console.log("Update check failed:", error);
+                });
+            }
+        }
+        
+        // Start checking for updates when page loads
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("wyerd.net - Contact page loaded (build: 1763596857791)");
+            
+            // Check for updates immediately and then every 30 seconds
+            checkForUpdates();
+            updateCheckInterval = setInterval(checkForUpdates, 30000);
+            
+            // Stop checking when page becomes hidden to save resources
+            document.addEventListener("visibilitychange", function() {
+                if (document.visibilityState === "hidden") {
+                    clearInterval(updateCheckInterval);
+                } else {
+                    // Resume checking when page becomes visible again
+                    updateCheckInterval = setInterval(checkForUpdates, 30000);
+                    checkForUpdates(); // Check immediately
+                }
+            });
+        });
+    </script>
+</body>
+</html>

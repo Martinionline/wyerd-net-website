@@ -1,0 +1,327 @@
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #fff;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+}
+
+/* Button Reset Styles */
+button {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+.custom-button {
+    border: none !important;
+    background: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font: inherit !important;
+    cursor: pointer !important;
+    outline: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+}
+
+/* Positioning Base */
+.division {
+    position: relative;
+    width: 100%;
+}
+
+.segment {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Feature Containers */
+.text-feature, .heading-feature, .image-feature, .feature {
+    width: 100%;
+    width: 100%; height: 100%; margin: 0; padding: 0; box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-feature > *, .heading-feature > * {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.image-feature img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Gallery Styles */
+.gallery-feature {
+    display: block !important;
+    contain: layout style;
+}
+
+.gallery-slider {
+    position: relative !important;
+    overflow: hidden !important;
+    user-select: none;
+}
+
+.slider-container {
+    display: flex !important;
+    transition: transform 300ms ease-in-out !important;
+    will-change: transform;
+}
+
+.slide {
+    flex-shrink: 0;
+    user-select: none;
+    pointer-events: none;
+}
+
+.slide img {
+    pointer-events: none;
+    user-select: none;
+    draggable: false;
+}
+
+.slider-prev, .slider-next {
+    position: absolute !important;
+    z-index: 15 !important;
+    user-select: none;
+    pointer-events: auto;
+    opacity: 0.8;
+    transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.gallery-slider:hover .slider-prev,
+.gallery-slider:hover .slider-next {
+    opacity: 1;
+}
+
+.slider-dots {
+    position: absolute !important;
+    z-index: 15 !important;
+    pointer-events: auto;
+}
+
+.slider-dot {
+    pointer-events: auto;
+    user-select: none;
+}
+
+/* Gallery Grid Styles */
+.gallery-grid {
+    display: grid !important;
+}
+
+.gallery-masonry {
+    display: grid !important;
+}
+
+.gallery-justified {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.justified-row {
+    display: flex !important;
+}
+
+.gallery-item {
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+/* Navigation */
+.main-navigation {
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    padding: 1rem;
+    gap: 2rem;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.nav-item:hover, .nav-item.active {
+    background: #f3f4f6;
+    color: #2563eb;
+}
+
+/* Layout */
+.page-section {
+    padding: 2rem 0;
+}
+
+.division {
+    /* Width, margin, and padding are handled inline based on division settings */
+}
+
+.segment {
+    margin: 1rem 0;
+}
+
+/* Features */
+.text-feature h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    color: #1f2937;
+}
+
+.text-feature h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0 0 0.75rem 0;
+    color: #374151;
+}
+
+.text-feature p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin: 0 0 1rem 0;
+    color: #4b5563;
+}
+
+.button-feature {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-button {
+    /* Default styles - will be overridden by inline styles */
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* Let the button size itself based on inline styles */
+}
+
+.custom-button:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.1);
+}
+
+.image-feature img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.empty-page {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #6b7280;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .division {
+        padding: 0.5rem;
+    }
+    
+    .text-feature h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Division Layout Improvements */
+.page-section {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.division {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.division-content {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.segment {
+    box-sizing: border-box;
+}
+
+/* Video Background Support */
+.video-background {
+    position: relative;
+    overflow: hidden;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-width: 100%; height: 100%; margin: 0; padding: 0; box-sizing: border-box;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.video-background .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    width: 100%; height: 100%; margin: 0; padding: 0; box-sizing: border-box;
+    z-index: 0;
+}
+
+/* Custom Division Styles */
+
