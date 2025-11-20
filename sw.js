@@ -1,27 +1,26 @@
 // Service Worker to handle API routes on wyerd.net - v2025.11.20
 // This intercepts /api/* requests and forwards to MongoDB backend
 
-const CACHE_NAME = 'wyerd-crm-v3';
+const CACHE_NAME = 'wyerd-crm-v4';
 const PRIMARY_BACKEND = 'https://added-highlight-treasurer-illustrations.trycloudflare.com';
 const FALLBACK_BACKENDS = [
-  'https://facilitate-dim-insight-writes.trycloudflare.com',
-  'https://expert-fishstick-7vwj9x9vj6r93wqqp-5000.app.github.dev'
+  'https://facilitate-dim-insight-writes.trycloudflare.com'
 ];
 
-console.log('🚀 Service Worker v2025.11.20 loading - Working Cloudflare Tunnel');
+console.log('🚀 Service Worker v2025.11.20.v4 loading - Cloudflare Tunnel Only');
 console.log('🎯 Primary Backend:', PRIMARY_BACKEND);
 console.log('🔄 Fallback Backends:', FALLBACK_BACKENDS);
 
 // Install service worker
 self.addEventListener('install', (event) => {
-  console.log('🔧 WyerdCRM Service Worker v2025.11.20 installing...');
+  console.log('🔧 WyerdCRM Service Worker v2025.11.20.v4 installing...');
   console.log('⚡ Forcing immediate activation to clear old cached version');
   self.skipWaiting();
 });
 
 // Activate service worker
 self.addEventListener('activate', (event) => {
-  console.log('✅ WyerdCRM Service Worker v2025.11.20 activated - Working Tunnel');
+  console.log('✅ WyerdCRM Service Worker v2025.11.20.v4 activated - Tunnel Only');
   console.log('🔗 Primary Backend:', PRIMARY_BACKEND);
   
   // Clear ALL caches and force refresh
@@ -103,15 +102,9 @@ async function handleApiRequest(request) {
         requestHeaders.set(key, value);
       }
       
-      // Don't override origin for Codespace URLs - let them be natural
-      if (backendUrl.includes('app.github.dev')) {
-        // Remove origin header to let browser set it naturally
-        requestHeaders.delete('Origin');
-        console.log('🏗️  Using natural origin for Codespace backend');
-      } else {
-        requestHeaders.set('Origin', 'https://wyerd.net');
-        console.log('🌐 Using wyerd.net origin for external backend');
-      }
+      // Always use wyerd.net origin for all backends
+      requestHeaders.set('Origin', 'https://wyerd.net');
+      console.log('🌐 Using wyerd.net origin for backend:', backendUrl);
       
       const backendRequest = new Request(fullBackendUrl, {
         method: request.method,
