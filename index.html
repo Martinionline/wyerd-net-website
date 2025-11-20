@@ -36,7 +36,7 @@
         setTimeout(() => {
           navigator.serviceWorker.register('/sw.js?v=' + Date.now())
             .then(registration => {
-              console.log('✅ Service Worker v2025.11.20 registered for API handling');
+              console.log('✅ Service Worker v2025.11.20.v4 registered - Tunnel Only');
               // Force update
               registration.update();
             })
