@@ -2,10 +2,10 @@
 // This intercepts /api/* requests and forwards to MongoDB backend
 
 const CACHE_NAME = 'wyerd-crm-v2';
-const PRIMARY_BACKEND = 'https://expert-fishstick-7vwj9x9vj6r93wqqp-5173.app.github.dev';
+const PRIMARY_BACKEND = 'https://added-highlight-treasurer-illustrations.trycloudflare.com';
 const FALLBACK_BACKENDS = [
-  'https://expert-fishstick-7vwj9x9vj6r93wqqp-5000.app.github.dev',
-  'https://facilitate-dim-insight-writes.trycloudflare.com'
+  'https://facilitate-dim-insight-writes.trycloudflare.com',
+  'https://expert-fishstick-7vwj9x9vj6r93wqqp-5000.app.github.dev'
 ];
 
 console.log('🚀 Service Worker v2025.11.19 loading - Multiple Backend Fallbacks');
